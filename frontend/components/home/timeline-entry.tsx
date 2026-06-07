@@ -1,17 +1,22 @@
-import { Fragment } from "react";
+function renderTextWithEmphasis(text: string) {
+  return text.split(/(\[\[.*?\]\])/g).filter(Boolean).map((segment, index) => {
+    const isEmphasized = segment.startsWith("[[") && segment.endsWith("]]");
 
-const emphasizedWords = new Set([
-  "infrastructure",
-  "workflows.",
-  "architecture.",
-  "engineering",
-  "protocols",
-  "models.",
-  "design",
-  "computing",
-  "silicon",
-  "electrons.",
-]);
+    if (!isEmphasized) {
+      return <span key={`${segment}-${index}`}>{segment}</span>;
+    }
+
+    return (
+      <span
+        key={`${segment}-${index}`}
+        className="italic text-primary-container"
+        style={{ fontFamily: "serif" }}
+      >
+        {segment.slice(2, -2)}
+      </span>
+    );
+  });
+}
 
 type TimelineEntryProps = {
   number: string;
@@ -35,20 +40,7 @@ export function TimelineEntry({
         </span>
         <h3 className="text-xl font-bold text-on-surface">{subtitle}</h3>
         <p className="max-w-2xl font-body-md text-on-surface-variant">
-          {text.split(" ").map((word, index) => (
-            <Fragment key={`${word}-${index}`}>
-              {emphasizedWords.has(word) ? (
-                <span
-                  className="italic text-primary-container"
-                  style={{ fontFamily: "serif" }}
-                >
-                  {word}{" "}
-                </span>
-              ) : (
-                `${word} `
-              )}
-            </Fragment>
-          ))}
+          {renderTextWithEmphasis(text)}
         </p>
       </div>
     </div>

@@ -1,5 +1,28 @@
 import Image from "next/image";
 
+function renderPointWithEmphasis(text: string) {
+  return text
+    .split(/(\\textbf\{.*?\})/g)
+    .filter(Boolean)
+    .map((segment, index) => {
+      const match = segment.match(/^\\textbf\{(.*)\}$/);
+
+      if (!match) {
+        return <span key={`${segment}-${index}`}>{segment}</span>;
+      }
+
+      return (
+        <span
+          key={`${segment}-${index}`}
+          className="italic text-primary-container"
+          style={{ fontFamily: "serif" }}
+        >
+          {match[1]}
+        </span>
+      );
+    });
+}
+
 type ExperienceEntryProps = {
   title: string;
   company: string;
@@ -49,7 +72,7 @@ export function ExperienceEntry({
         {points.map((point) => (
           <li key={point} className="flex gap-3">
             <span className="text-primary">{"//"}</span>
-            {point}
+            <span>{renderPointWithEmphasis(point)}</span>
           </li>
         ))}
       </ul>
