@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ContactForm } from "@/components/home/contact-form";
 import { ExperienceEntry } from "@/components/home/experience-entry";
 import { ProjectCard } from "@/components/home/project-card";
 import { ScrollIndicator } from "@/components/home/scroll-indicator";
@@ -222,57 +223,7 @@ export function HomePage() {
           <div className="mx-auto max-w-4xl">
             <div className="relative overflow-hidden rounded-xl border border-primary/20 bg-surface-glass p-6 shadow-[0_0_30px_rgba(0,229,255,0.1)] backdrop-blur-lg md:p-10">
               <div className="scanline opacity-20"></div>
-              <form className="relative z-10 grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-8">
-                <div className="flex flex-col gap-2">
-                  <label className="font-label-caps text-[10px] uppercase tracking-widest text-primary/70">
-                    01. Your Name
-                  </label>
-                  <input
-                    className="rounded border border-primary/20 bg-analog-gray/30 p-3 font-code-sm text-on-surface outline-none transition-all placeholder:text-primary/20 focus:border-primary/60"
-                    placeholder="Tony Stark"
-                    type="text"
-                  />
-                </div>
-                <div className="flex flex-col gap-2">
-                  <label className="font-label-caps text-[10px] uppercase tracking-widest text-primary/70">
-                    02. Email Address
-                  </label>
-                  <input
-                    className="rounded border border-primary/20 bg-analog-gray/30 p-3 font-code-sm text-on-surface outline-none transition-all placeholder:text-primary/20 focus:border-primary/60"
-                    placeholder="example@starkindustries.com"
-                    type="email"
-                  />
-                </div>
-                <div className="flex flex-col gap-2 md:col-span-2">
-                  <label className="font-label-caps text-[10px] uppercase tracking-widest text-primary/70">
-                    03. Affiliation
-                  </label>
-                  <input
-                    className="rounded border border-primary/20 bg-analog-gray/30 p-3 font-code-sm text-on-surface outline-none transition-all placeholder:text-primary/20 focus:border-primary/60"
-                    placeholder="Stark Industries"
-                    type="text"
-                  />
-                </div>
-                <div className="flex flex-col gap-2 md:col-span-2">
-                  <label className="font-label-caps text-[10px] uppercase tracking-widest text-primary/70">
-                    04. Message
-                  </label>
-                  <textarea
-                    className="resize-none rounded border border-primary/20 bg-analog-gray/30 p-3 font-code-sm text-on-surface outline-none transition-all placeholder:text-primary/20 focus:border-primary/60"
-                    placeholder="Let's chat..."
-                    rows={4}
-                  />
-                </div>
-                <div className="mt-8 flex justify-center md:col-span-2">
-                  <button
-                    className="glitch-btn group flex items-center gap-3 rounded bg-primary-container px-12 py-4 font-label-caps text-label-caps tracking-widest text-on-primary shadow-[0_0_20px_rgba(0,229,255,0.4)] transition-all hover:bg-primary"
-                    type="button"
-                  >
-                    <Icon className="h-5 w-5 group-hover:animate-pulse" name="sensors" />
-                    TRANSMIT MESSAGE
-                  </button>
-                </div>
-              </form>
+              <ContactForm />
             </div>
           </div>
         </section>
