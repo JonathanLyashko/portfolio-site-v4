@@ -61,6 +61,35 @@ export function HomePage() {
                 RESUME
               </button>
             </div>
+            <div className="flex items-center gap-4 pt-1">
+              <span className="font-label-caps text-[10px] uppercase tracking-[0.24em] text-primary/45">
+                Connect
+              </span>
+              <div className="h-px w-12 bg-primary/10" />
+              <div className="flex items-center gap-2">
+                <a
+                  href="https://github.com/JonathanLyashko"
+                  aria-label="GitHub"
+                  className="group flex h-10 w-10 items-center justify-center rounded border border-primary/12 bg-primary/4 text-on-surface-variant transition-all hover:border-primary/35 hover:bg-primary/8 hover:text-primary"
+                >
+                  <Icon className="h-4 w-4 transition-transform group-hover:-translate-y-0.5" name="github" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/jonathan-lyashko/"
+                  aria-label="LinkedIn"
+                  className="group flex h-10 w-10 items-center justify-center rounded border border-primary/12 bg-primary/4 text-on-surface-variant transition-all hover:border-primary/35 hover:bg-primary/8 hover:text-primary"
+                >
+                  <Icon className="h-4 w-4 transition-transform group-hover:-translate-y-0.5" name="linkedin" />
+                </a>
+                <a
+                  href="mailto:jlyashko@uwaterloo.ca"
+                  aria-label="Email"
+                  className="group flex h-10 w-10 items-center justify-center rounded border border-primary/12 bg-primary/4 text-on-surface-variant transition-all hover:border-primary/35 hover:bg-primary/8 hover:text-primary"
+                >
+                  <Icon className="h-4 w-4 transition-transform group-hover:-translate-y-0.5" name="mail" />
+                </a>
+              </div>
+            </div>
           </div>
           <div className="order-1 relative flex justify-center lg:order-2 lg:col-span-5 lg:justify-end">
             <div className="group relative h-64 w-64 overflow-hidden rounded-full border-4 border-primary/30 p-2 shadow-[0_0_30px_rgba(0,229,255,0.2)] md:h-80 md:w-80">
@@ -196,21 +225,21 @@ export function HomePage() {
               <form className="relative z-10 grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-8">
                 <div className="flex flex-col gap-2">
                   <label className="font-label-caps text-[10px] uppercase tracking-widest text-primary/70">
-                    01. Origin_Name
+                    01. Your Name
                   </label>
                   <input
                     className="rounded border border-primary/20 bg-analog-gray/30 p-3 font-code-sm text-on-surface outline-none transition-all placeholder:text-primary/20 focus:border-primary/60"
-                    placeholder="IDENTIFY_YOURSELF"
+                    placeholder="Tony Stark"
                     type="text"
                   />
                 </div>
                 <div className="flex flex-col gap-2">
                   <label className="font-label-caps text-[10px] uppercase tracking-widest text-primary/70">
-                    02. Return_Address
+                    02. Email Address
                   </label>
                   <input
                     className="rounded border border-primary/20 bg-analog-gray/30 p-3 font-code-sm text-on-surface outline-none transition-all placeholder:text-primary/20 focus:border-primary/60"
-                    placeholder="EMAIL@DOMAIN.COM"
+                    placeholder="example@starkindustries.com"
                     type="email"
                   />
                 </div>
@@ -220,17 +249,17 @@ export function HomePage() {
                   </label>
                   <input
                     className="rounded border border-primary/20 bg-analog-gray/30 p-3 font-code-sm text-on-surface outline-none transition-all placeholder:text-primary/20 focus:border-primary/60"
-                    placeholder="COMPANY_OR_ORGANIZATION"
+                    placeholder="Stark Industries"
                     type="text"
                   />
                 </div>
                 <div className="flex flex-col gap-2 md:col-span-2">
                   <label className="font-label-caps text-[10px] uppercase tracking-widest text-primary/70">
-                    04. Transmission_Payload
+                    04. Message
                   </label>
                   <textarea
                     className="resize-none rounded border border-primary/20 bg-analog-gray/30 p-3 font-code-sm text-on-surface outline-none transition-all placeholder:text-primary/20 focus:border-primary/60"
-                    placeholder="ENTER_MESSAGE_DATA..."
+                    placeholder="Let's chat..."
                     rows={4}
                   />
                 </div>

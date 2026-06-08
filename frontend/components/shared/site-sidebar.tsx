@@ -75,7 +75,7 @@ export function SiteSidebar({ currentPath }: SiteSidebarProps) {
           </div>
           <div className="flex gap-2">
             <a
-              href="#"
+              href="https://github.com/JonathanLyashko"
               className="group flex h-8 w-8 items-center justify-center rounded border border-primary/10 transition-all hover:border-primary/40 hover:bg-primary/5"
             >
               <svg className="h-4 w-4 text-on-surface-variant transition-colors group-hover:text-primary" fill="currentColor" viewBox="0 0 24 24">
@@ -83,7 +83,7 @@ export function SiteSidebar({ currentPath }: SiteSidebarProps) {
               </svg>
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/in/jonathan-lyashko/"
               className="group flex h-8 w-8 items-center justify-center rounded border border-primary/10 transition-all hover:border-primary/40 hover:bg-primary/5"
             >
               <svg className="h-4 w-4 text-on-surface-variant transition-colors group-hover:text-primary" fill="currentColor" viewBox="0 0 24 24">
@@ -91,7 +91,7 @@ export function SiteSidebar({ currentPath }: SiteSidebarProps) {
               </svg>
             </a>
             <a
-              href="#contact"
+              href="mailto:jlyashko@uwaterloo.ca"
               className="group flex h-8 w-8 items-center justify-center rounded border border-primary/10 transition-all hover:border-primary/40 hover:bg-primary/5"
             >
               <Icon className="h-[18px] w-[18px] text-on-surface-variant transition-colors group-hover:text-primary" name="mail" />

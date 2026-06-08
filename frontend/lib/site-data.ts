@@ -60,9 +60,21 @@ export const timelineItems: TimelineItem[] = [
 
 export const experienceItems: ExperienceItem[] = [
   {
+    title: "Robotics Research Assistant",
+    company: "IDEAS Clinic, University of Waterloo",
+    period: "Jan. 2026 - Apr. 2026",
+    points: [
+      "Led development of a \\textbf{centralized robot arbitration layer} for multi-agent Tetrix robot fleets, coordinating telemetry ingestion, task allocation, and live operator control through a \\textbf{multithreaded Python TCP server}.",
+      "Built fault-tolerant \\textbf{serial communication} between FPGA modules and resource-constrained microcontrollers, optimizing data transfer under strict memory, timing, and buffering constraints.",
+      "Developed odometry-driven coordination logic for autonomous robot fleets, implementing collision avoidance and \\textbf{shared-environment} navigation across multiple physical agents.",
+      "Implemented a real-time \\textbf{FFT audio visualization system} on an Intel Max 10 FPGA using \\textbf{SystemVerilog}, streaming spectral analysis results to a VGA display.",
+    ],
+    logo: "engineering_ideas_clinic_logo.jpg",
+  },
+  {
     title: "AI/ML Engineer Intern",
     company: "Revvity",
-    period: "May 2025 - August 2025",
+    period: "May 2025 - Aug. 2025",
     points: [
       "Created \\textbf{retrieval-augmented generation (RAG)} pipelines and prompt-engineered LLM behavior for domain-specific contexts, boosting output accuracy and adoption.",
       "Built modular, agentic LLM workflows using \\textbf{LangGraph}, deploying across AWS Bedrock and Azure AI Agents to support scalable, \\textbf{cloud-agnostic AI service orchestration}.",
@@ -70,12 +82,12 @@ export const experienceItems: ExperienceItem[] = [
       "Built a \\textbf{seamless rollback mechanism}, transforming recovery from a high-risk, manual process into a smooth operation, dramatically minimizing downtime and business risk.",
       "Implemented a comprehensive \\textbf{automated testing} framework in Playwright spanning \\textbf{10+ system components}, proactively catching regressions before production and significantly improving reliability.",
     ],
-    logo: "https://lh3.googleusercontent.com/aida/AP1WRLsEvPEXV7cVcB0uqpGWnaxiYG1n4_kE4ZAHUt6amKgAUk_NAtJFMbo4cbvmIU1fhq0QM9qBpl2wlhRG72yQi-QARIOgap-3PLwvpmfVtnnJXykatPKDKeD31eHKp5KjW4LkC1cRQrGjYxIiTmHPWG9JRjBiuKSQqn3P13cju1eJkukWXwDHf8OEFUQCmFie9yKp2CcR_x-3NZ_DluIDBubj5Jdq0W3TBo72A3UNVPMVFRjWrQj3g3Y5Dw",
+    logo: "revvity_logo.jpg",
   },
   {
     title: "Systems Developer",
     company: "Co-operators",
-    period: "Sept 2024 - Dec 2024",
+    period: "Sep. 2024 - Dec. 2024",
     points: [
       "Automated workflows by developing and deploying \\textbf{Python and Bash scripts} for tracking and management of areas such as SSL certificate renewal, improving efficiency and reducing manual oversight.",
       "Debugged and \\textbf{optimized CI/CD tools}, including Dockerfiles and Jenkins build jobs, ensuring reliability through GitHub checks and various unit tests.",
@@ -83,7 +95,7 @@ export const experienceItems: ExperienceItem[] = [
       "Created GitHub automations with \\textbf{GitHub Actions}, streamlining repository management and integration.",
       "Developed and maintained \\textbf{.NET Web APIs using C#}, integrating internal NuGet packages to enhance functionality.",
     ],
-    initials: "CO",
+    logo: "cooperators_logo_alt.jpg",
   },
 ];
 

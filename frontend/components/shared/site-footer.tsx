@@ -8,11 +8,14 @@ export function SiteFooter() {
           </p>
         </div>
         <div className="flex justify-center gap-8">
-          <a className="font-label-caps text-label-caps text-outline-variant transition-all hover:text-secondary-container" href="#">
+          <a className="font-label-caps text-label-caps text-outline-variant transition-all hover:text-secondary-container" href="https://github.com/JonathanLyashko">
             GitHub
           </a>
-          <a className="font-label-caps text-label-caps text-outline-variant transition-all hover:text-secondary-container" href="#">
+          <a className="font-label-caps text-label-caps text-outline-variant transition-all hover:text-secondary-container" href="https://www.linkedin.com/in/jonathan-lyashko/">
             LinkedIn
+          </a>
+          <a className="font-label-caps text-label-caps text-outline-variant transition-all hover:text-secondary-container" href="mailto:jlyashko@uwaterloo.ca">
+            jlyashko@uwaterloo.ca
           </a>
         </div>
         <div className="flex md:justify-end">

@@ -50,7 +50,7 @@ export function ExperienceEntry({
             {logo ? (
               <Image
                 alt={company}
-                className="h-8 w-8 rounded-sm object-contain grayscale opacity-70"
+                className="h-8 w-8 rounded-sm object-contain"
                 height={32}
                 src={logo}
                 unoptimized
