@@ -142,36 +142,34 @@ export function AcademicPage() {
                 </table>
               </div>
 
-              <aside className="self-start">
-                <div className="lg:sticky lg:top-28">
-                  <div className="relative overflow-hidden rounded border border-primary/20 bg-surface-container-low/50 p-6">
-                    <div className="scanline opacity-10"></div>
-                    <div className="relative z-10 flex flex-col gap-4">
-                      <div className="flex items-start justify-between gap-4 border-b border-primary/10 pb-4">
-                        <div>
-                          <p className="font-label-caps text-[10px] uppercase tracking-widest text-primary/60">
-                            Selected Course
-                          </p>
-                          <h3 className="mt-2 font-headline-lg text-2xl text-on-surface">
-                            {selectedCourse.code}
-                          </h3>
-                          <p className="mt-1 text-sm text-on-surface-variant">
-                            {selectedCourse.title}
-                          </p>
-                        </div>
-                        <span className="rounded border border-primary/15 bg-primary/5 px-2 py-1 font-label-caps text-[10px] text-primary">
-                          {selectedCourse.term}
-                        </span>
-                      </div>
-
-                      <div className="space-y-3">
+              <aside className="h-fit self-start lg:sticky lg:top-28">
+                <div className="relative overflow-hidden rounded border border-primary/20 bg-surface-container-low/50 p-6">
+                  <div className="scanline opacity-10"></div>
+                  <div className="relative z-10 flex flex-col gap-4">
+                    <div className="flex items-start justify-between gap-4 border-b border-primary/10 pb-4">
+                      <div>
                         <p className="font-label-caps text-[10px] uppercase tracking-widest text-primary/60">
-                          Calendar Description
+                          Selected Course
                         </p>
-                        <p className="text-sm leading-relaxed text-on-surface-variant">
-                          {selectedCourse.desc}
+                        <h3 className="mt-2 font-headline-lg text-2xl text-on-surface">
+                          {selectedCourse.code}
+                        </h3>
+                        <p className="mt-1 text-sm text-on-surface-variant">
+                          {selectedCourse.title}
                         </p>
                       </div>
+                      <span className="rounded border border-primary/15 bg-primary/5 px-2 py-1 font-label-caps text-[10px] text-primary">
+                        {selectedCourse.term}
+                      </span>
+                    </div>
+
+                    <div className="space-y-3">
+                      <p className="font-label-caps text-[10px] uppercase tracking-widest text-primary/60">
+                        Calendar Description
+                      </p>
+                      <p className="text-sm leading-relaxed text-on-surface-variant">
+                        {selectedCourse.desc}
+                      </p>
                     </div>
                   </div>
                 </div>

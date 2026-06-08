@@ -17,7 +17,10 @@ export function SiteSidebar({ currentPath }: SiteSidebarProps) {
     <aside className="fixed left-0 top-0 z-40 hidden h-full w-64 flex-col border-r border-white/5 bg-surface-glass py-margin-safe backdrop-blur-lg md:flex">
       <div className="flex h-full flex-col px-4 py-8">
         <div className="mb-12 flex flex-col items-start gap-4 px-4">
-          <div className="mb-2 h-10 w-10 rounded border border-primary/30 bg-primary/5 p-1">
+          <Link
+            className="mb-2 h-10 w-10 rounded border border-primary/30 bg-primary/5 p-1 transition-colors hover:border-primary/50 hover:bg-primary/10"
+            href="/"
+          >
             <Image
               alt="JL Logo"
               className="h-full w-full object-contain"
@@ -26,7 +29,7 @@ export function SiteSidebar({ currentPath }: SiteSidebarProps) {
               width={40}
               unoptimized
             />
-          </div>
+          </Link>
           <div className="flex flex-col gap-1">
             <h2 className="font-headline-lg text-lg tracking-tight text-primary">
               Jonathan Lyashko
@@ -69,9 +72,12 @@ export function SiteSidebar({ currentPath }: SiteSidebarProps) {
 
         <div className="mt-auto flex flex-col items-start gap-6 px-4">
           <div className="flex flex-col items-center gap-1">
-            <div className="flex h-8 w-8 items-center justify-center overflow-hidden rounded border border-primary/40 bg-analog-gray">
+            <Link
+              className="flex h-8 w-8 items-center justify-center overflow-hidden rounded border border-primary/40 bg-analog-gray transition-colors hover:border-primary/60 hover:bg-primary/10"
+              href="/"
+            >
               <span className="text-[10px] font-bold text-primary">JL</span>
-            </div>
+            </Link>
           </div>
           <div className="flex gap-2">
             <a
