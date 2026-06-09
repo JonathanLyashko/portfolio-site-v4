@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Icon } from "@/components/shared/icon";
 
 type SiteSidebarProps = {
-  currentPath: "/" | "/academic";
+  currentPath: "/" | "/academic" | "/projects";
 };
 
 function navClass(active: boolean) {
@@ -60,7 +60,7 @@ export function SiteSidebar({ currentPath }: SiteSidebarProps) {
             <Icon className="h-6 w-6" name="history_edu" />
             <span className="font-label-caps text-[10px] tracking-widest">EXPERIENCE</span>
           </Link>
-          <Link className={navClass(false)} href="/#projects">
+          <Link className={navClass(currentPath === "/projects")} href="/projects">
             <Icon className="h-6 w-6" name="dashboard" />
             <span className="font-label-caps text-[10px] tracking-widest">PROJECTS</span>
           </Link>

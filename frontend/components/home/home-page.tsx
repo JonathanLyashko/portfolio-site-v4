@@ -50,13 +50,16 @@ export function HomePage() {
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-4">
-              <button className="glitch-btn group flex items-center gap-3 rounded-lg border border-primary/20 bg-primary/10 px-8 py-4 font-label-caps text-label-caps text-primary shadow-[0_0_10px_rgba(0,229,255,0.12)] transition-all hover:border-primary/35 hover:bg-primary/14">
+              <Link
+                className="glitch-btn group flex items-center gap-3 rounded-lg border border-primary/20 bg-primary/10 px-8 py-4 font-label-caps text-label-caps text-primary shadow-[0_0_10px_rgba(0,229,255,0.12)] transition-all hover:border-primary/35 hover:bg-primary/14"
+                href="/projects"
+              >
                 <Icon
                   className="h-5 w-5 transition-transform group-hover:translate-x-1"
                   name="arrow_forward"
                 />
                 VIEW PROJECTS
-              </button>
+              </Link>
               <button className="flex items-center gap-3 rounded-lg border border-primary/30 px-8 py-4 font-label-caps text-label-caps text-primary transition-all hover:border-primary hover:bg-primary/10">
                 <Icon className="h-5 w-5" name="description" />
                 RESUME
@@ -190,9 +193,12 @@ export function HomePage() {
               Some Things I&apos;ve Built
             </h2>
             <div className="h-[1px] flex-grow bg-primary/20"></div>
-            <button className="rounded border border-primary/30 px-4 py-1 font-label-caps text-[10px] text-primary transition-all hover:bg-primary/10">
+            <Link
+              className="rounded border border-primary/30 px-4 py-1 font-label-caps text-[10px] text-primary transition-all hover:bg-primary/10"
+              href="/projects"
+            >
               Grid View
-            </button>
+            </Link>
           </div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {projectItems.map((item) => (
@@ -200,13 +206,16 @@ export function HomePage() {
             ))}
           </div>
           <div className="relative z-10 mt-8 flex justify-center border-t border-primary/10 pt-8">
-            <button className="glitch-btn group flex items-center gap-3 rounded border border-primary/30 px-10 py-4 font-label-caps text-label-caps tracking-widest text-primary shadow-[0_0_15px_rgba(0,229,255,0.1)] transition-all hover:border-primary hover:bg-primary/10">
+            <Link
+              className="glitch-btn group flex items-center gap-3 rounded border border-primary/30 px-10 py-4 font-label-caps text-label-caps tracking-widest text-primary shadow-[0_0_15px_rgba(0,229,255,0.1)] transition-all hover:border-primary hover:bg-primary/10"
+              href="/projects"
+            >
               <Icon
                 className="h-[18px] w-[18px] transition-transform group-hover:rotate-45"
                 name="grid_view"
               />
               VIEW ALL PROJECTS ARCHIVE
-            </button>
+            </Link>
           </div>
         </section>
 

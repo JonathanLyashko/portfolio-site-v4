@@ -1,25 +1,25 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Icon } from "@/components/shared/icon";
+import type { ProjectItem } from "@/lib/site-data";
 
-type ProjectCardProps = {
-  label: string;
-  title: string;
-  tech: string;
-  desc: string;
-  tags: string[];
-  img: string;
-};
+type ProjectCardProps = ProjectItem;
 
 export function ProjectCard({
+  slug,
   label,
   title,
   tech,
   desc,
   tags,
   img,
+  links,
 }: ProjectCardProps) {
   return (
     <div className="group relative flex flex-col overflow-hidden rounded-2xl border border-primary/10 bg-surface-panel/40 p-6">
+      <Link className="absolute inset-0 z-10" href={`/projects/${slug}`}>
+        <span className="sr-only">Open {title}</span>
+      </Link>
       <div className="scanline opacity-5"></div>
       <div className="relative mb-6">
         <div className="absolute -inset-1 bg-primary/20 opacity-0 blur-xl transition-all duration-700 group-hover:opacity-100"></div>
@@ -55,22 +55,31 @@ export function ProjectCard({
         </div>
         <div className="flex items-center justify-between border-t border-primary/10 pt-4">
           <div className="flex gap-3">
-            <button className="flex items-center gap-1 font-label-caps text-[9px] text-on-surface-variant transition-colors hover:text-primary">
+            <a
+              className="relative z-20 flex items-center gap-1 font-label-caps text-[9px] text-on-surface-variant transition-colors hover:text-primary"
+              href={links.repo ?? `/projects/${slug}`}
+            >
               <Icon className="h-4 w-4" name="code" />
               Code
-            </button>
-            <button className="flex items-center gap-1 font-label-caps text-[9px] text-on-surface-variant transition-colors hover:text-primary">
+            </a>
+            <a
+              className="relative z-20 flex items-center gap-1 font-label-caps text-[9px] text-on-surface-variant transition-colors hover:text-primary"
+              href={links.live ?? `/projects/${slug}`}
+            >
               <Icon className="h-4 w-4" name="open_in_new" />
               Demo
-            </button>
+            </a>
           </div>
-          <button className="group flex items-center gap-1 font-label-caps text-[9px] text-primary transition-colors hover:text-primary-container">
+          <Link
+            className="relative z-20 group flex items-center gap-1 font-label-caps text-[9px] text-primary transition-colors hover:text-primary-container"
+            href={`/projects/${slug}`}
+          >
             Details
             <Icon
               className="h-3 w-3 transition-transform group-hover:translate-x-1"
               name="arrow_forward"
             />
-          </button>
+          </Link>
         </div>
       </div>
     </div>

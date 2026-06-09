@@ -4,7 +4,7 @@ import { SiteSidebar } from "@/components/shared/site-sidebar";
 
 type SiteShellProps = {
   children: React.ReactNode;
-  currentPath: "/" | "/academic";
+  currentPath: "/" | "/academic" | "/projects";
 };
 
 export function SiteShell({ children, currentPath }: SiteShellProps) {

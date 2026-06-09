@@ -15,12 +15,22 @@ export type ExperienceItem = {
 };
 
 export type ProjectItem = {
+  slug: string;
   label: string;
   title: string;
   tech: string;
   desc: string;
   tags: string[];
   img: string;
+  archiveCode: string;
+  status: string;
+  summary: string;
+  problem: string;
+  solution: string;
+  links: {
+    repo?: string;
+    live?: string;
+  };
 };
 
 export type CourseItem = {
@@ -101,30 +111,61 @@ export const experienceItems: ExperienceItem[] = [
 
 export const projectItems: ProjectItem[] = [
   {
+    slug: "rust-snake-game",
     label: "Featured Project",
     title: "Rust Snake Game",
     tech: "Rust + WebAssembly",
-    desc: "Classic snake game built with Rust and compiled to WebAssembly for browser play, delivering native-like performance.",
-    tags: ["Rust", "WASM"],
+    desc: "High-performance terminal and browser snake implementation focused on low-level state and responsive rendering.",
+    tags: ["Rust", "CLI", "WASM"],
     img: "https://lh3.googleusercontent.com/aida/AP1WRLu2-TscYpzBoCSTYtD_pn6WZIzT_B4VXXquRcmAJuVpDxzT0XquJGLRrvvKMwPM_iCONfjG8KuSNSl-Mp3g2HCh0K3p2bs20CTDniJMED2Qge-YbHoYiW3GZENIJ3EVAWFzHq6c6-Gx_bgAZO6PPb9xe-aU_beCcJEY0B_8zt8GmArTz-OgHZ5zdcm4RCmBtlQ-Q42f2eL4CN_2gPvbeHFdHfCCUaNfPs-nQBL71rB_ylYQWf4KfGQq8g",
+    archiveCode: "QC-ME-001",
+    status: "Rust core",
+    summary: "A systems-oriented game project used to explore deterministic update loops, state ownership, and browser export via WebAssembly.",
+    problem: "Small game projects often hide the interesting systems work behind heavy frameworks, which makes the actual state and timing logic hard to study.",
+    solution: "I built the loop and state model directly in Rust, then reused the core logic for a browser-facing WebAssembly build to keep the project low-level and portable.",
+    links: {
+      repo: "https://github.com/JonathanLyashko",
+    },
   },
   {
+    slug: "medication-dispenser",
     label: "Hardware Project",
     title: "Medication Dispenser",
     tech: "C++ + Arduino + IoT",
-    desc: "An IoT-enabled device designed to automate medication schedules with real-time alerts and dosage tracking.",
-    tags: ["C++", "IoT"],
+    desc: "Embedded control system for timed dispensing, hardware-state feedback, and reliability under physical constraints.",
+    tags: ["Arduino", "C++", "Embedded"],
     img: "https://lh3.googleusercontent.com/aida/AP1WRLupzrgVundDVB882J5Gm_1cURRrGlIiuyfEBJ0Wv2CzDtdxEYejfpiuEfRxHSiIk3xUaktI9Gzdk6NYHgKzXC1Gw-dJ7qQagIZ1eY-C4b7Z0yeIhEwx0B0PcvR7Ie0Ww-F44klOG6QQqgjzgKcEKySQOJ97uQXxoYFJGRYvjD_wFm9qYrO3NQ3mLY3M1G1wFs_nX8uRpOF-uZc8WUcnN2QgZRUwPtgeqbqIng_AhDoV0Dlt4MZ38nDXC-w",
+    archiveCode: "QC-HW-004",
+    status: "System live",
+    summary: "A hardware-focused build around actuation timing, user feedback, and predictable embedded behavior.",
+    problem: "Medication automation is not just scheduling. It needs repeatable dispensing, clear system state, and enough resilience to be trusted in daily use.",
+    solution: "I approached it as an embedded systems problem first, designing around deterministic firmware behavior, controlled actuation, and straightforward feedback.",
+    links: {
+      repo: "https://github.com/JonathanLyashko",
+    },
   },
   {
+    slug: "sorting-visualizer",
     label: "Web Project",
     title: "Sorting Visualizer",
     tech: "React + Framer Motion",
-    desc: "Interactive visualization of common sorting algorithms to help students understand time complexity and execution flow.",
-    tags: ["React", "Motion"],
+    desc: "Interactive study tool for algorithm flow, stepwise state changes, and runtime intuition.",
+    tags: ["React", "Motion", "Canvas"],
     img: "https://lh3.googleusercontent.com/aida/AP1WRLu9_oTd0AdFIWPlXyQ42jWVgHsjHZHFFEVHvmCpWqFHGTx2PqGPXYlcsajVjnzyr7WkiUIiUATg5XMakb3SE7DKuEYBi9QHzAX-VdPzKhBt3A-OZ_lcVAfvIygth8etq2EBwU-uP6U6EwbTuCWjBgWiLD5kXq4wkl4r5RZ-E4qMx3-dgriEmjneWyw1UKWgdkpQ0xqHkBsuZcaLA3bCPp4bxpdtuRlDC2iEFgTeKShzJ6I2EGzpxacBAw",
+    archiveCode: "QC-WE-012",
+    status: "Canvas ops",
+    summary: "A visualization project built to make algorithm behavior legible instead of merely animated.",
+    problem: "Many sorting demos look dynamic but fail to communicate what the algorithm is actually doing from one comparison or swap to the next.",
+    solution: "I focused on controlled rendering and pacing so each step reads clearly, making the algorithm easier to reason about while keeping the interface lightweight.",
+    links: {
+      repo: "https://github.com/JonathanLyashko",
+    },
   },
 ];
+
+export function getProjectBySlug(slug: string) {
+  return projectItems.find((project) => project.slug === slug);
+}
 
 export const courseItems: CourseItem[] = [
   {
