@@ -197,7 +197,7 @@ export function HomePage() {
               className="rounded border border-primary/30 px-4 py-1 font-label-caps text-[10px] text-primary transition-all hover:bg-primary/10"
               href="/projects"
             >
-              Grid View
+              View All
             </Link>
           </div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">

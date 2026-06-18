@@ -11,28 +11,33 @@ export function ProjectDetailPage({ project }: ProjectDetailPageProps) {
   return (
     <main className="relative mx-auto max-w-7xl flex-grow overflow-visible px-4 pb-24 pt-32 md:ml-64 md:px-margin-safe">
       <div className="mx-auto max-w-6xl px-gutter py-12">
-        <section className="mb-12 flex flex-col gap-6 border-l-4 border-primary pl-6">
-          <div className="flex flex-wrap items-center gap-4">
-            <Link
-              className="font-headline-lg text-xl text-on-surface underline decoration-primary/30 underline-offset-4 transition-colors hover:text-primary"
-              href="/projects"
-            >
-              Project Archive
-            </Link>
-            <span className="rounded border border-primary/15 bg-primary/5 px-3 py-1 font-label-caps text-[10px] tracking-widest text-primary">
-              {project.archiveCode}
-            </span>
+        <div className="mb-12 flex flex-col items-end justify-between gap-6 border-l-4 border-primary pl-6 md:flex-row">
+          <div className="flex flex-col gap-4">
+            <div className="flex flex-wrap items-center gap-4">
+              <span className="rounded border border-primary/15 bg-primary/5 px-3 py-1 font-label-caps text-[10px] tracking-widest text-primary">
+                {project.archiveCode}
+              </span>
+            </div>
+            <p className="font-label-caps text-[10px] uppercase tracking-[0.32em] text-primary/70">
+              {project.label}
+            </p>
+            <h1 className="font-headline-xl text-5xl tracking-tight text-primary md:text-7xl">
+              {project.title}
+            </h1>
+            <p className="max-w-3xl text-base leading-relaxed text-on-surface-variant">
+              {project.summary}
+            </p>
           </div>
-          <p className="font-label-caps text-[10px] uppercase tracking-[0.32em] text-primary/70">
-            {project.label}
-          </p>
-          <h1 className="font-headline-xl text-5xl tracking-tight text-primary md:text-7xl">
-            {project.title}
-          </h1>
-          <p className="max-w-3xl text-base leading-relaxed text-on-surface-variant">
-            {project.summary}
-          </p>
-        </section>
+          <Link
+            className="group flex items-center gap-2 rounded-lg border border-outline-variant bg-surface-glass px-6 py-3 shadow-lg transition-all active:scale-95 hover:border-primary-fixed-dim"
+            href="/"
+          >
+            <Icon className="h-5 w-5 text-primary group-hover:animate-pulse" name="home" />
+            <span className="font-label-caps text-label-caps text-primary">
+              RETURN TO HOME
+            </span>
+          </Link>
+        </div>
 
         <section className="grid gap-8 lg:grid-cols-[minmax(0,1.2fr)_320px]">
           <div className="space-y-8">

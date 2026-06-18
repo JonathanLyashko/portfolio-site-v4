@@ -25,9 +25,8 @@ export function SiteSidebar({ currentPath }: SiteSidebarProps) {
               alt="JL Logo"
               className="h-full w-full object-contain"
               height={40}
-              src="https://lh3.googleusercontent.com/aida/AP1WRLu3YSooyisvktCZ-Z5D8_nb4tQddMutMfJXTaJuUarRY5sM90V1vis71UVOQA_EuKhOFDQqD2QFyoZTpUVxzUzPkrJ3l6I7tAJ4RTFL0nLihmOXxtlOOgCaK0w_EsApWgTR1iDkhvbQQisQygWSvrovNF9B_CG49JM3uMaK_qAU55o9cZJwzkSjK2Mfg5cfkAsLPEwam8jJNZlFP4MkiwvrvIDDyTcX2NI7OwCWg_LFSVLGTY9JiwEjqeI"
+              src="/apple-touch-icon.png"
               width={40}
-              unoptimized
             />
           </Link>
           <div className="flex flex-col gap-1">
