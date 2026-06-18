@@ -39,7 +39,10 @@ export function ProjectDetailPage({ project }: ProjectDetailPageProps) {
             className="group flex items-center gap-2 rounded-lg border border-outline-variant bg-surface-glass px-6 py-3 shadow-lg transition-all active:scale-95 hover:border-primary-fixed-dim"
             href="/projects"
           >
-            <Icon className="h-5 w-5 text-primary group-hover:animate-pulse" name="arrow_back" />
+            <Icon
+              className="h-5 w-5 -scale-x-100 text-primary group-hover:animate-pulse"
+              name="arrow_forward"
+            />
             <span className="font-label-caps text-label-caps text-primary">
               BACK TO PROJECTS
             </span>
