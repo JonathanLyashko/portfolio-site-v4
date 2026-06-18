@@ -16,17 +16,16 @@ export function ProjectCard({
   links,
 }: ProjectCardProps) {
   return (
-    <div className="group relative flex flex-col overflow-hidden rounded-2xl border border-primary/10 bg-surface-panel/40 p-6">
+    <div className="relative flex flex-col overflow-hidden rounded-2xl border border-primary/10 bg-surface-panel/40 p-6">
       <Link className="absolute inset-0 z-10" href={`/projects/${slug}`}>
         <span className="sr-only">Open {title}</span>
       </Link>
       <div className="scanline opacity-5"></div>
       <div className="relative mb-6">
-        <div className="absolute -inset-1 bg-primary/20 opacity-0 blur-xl transition-all duration-700 group-hover:opacity-100"></div>
         <div className="relative overflow-hidden rounded-xl border-2 border-primary/30 bg-background p-1 shadow-[0_0_30px_rgba(0,229,255,0.1)]">
           <Image
             alt={title}
-            className="aspect-video w-full rounded-lg object-cover grayscale transition-all duration-700 group-hover:grayscale-0"
+            className="aspect-video w-full rounded-lg object-cover"
             height={270}
             src={img}
             unoptimized

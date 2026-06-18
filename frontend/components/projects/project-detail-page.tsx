@@ -14,9 +14,16 @@ export function ProjectDetailPage({ project }: ProjectDetailPageProps) {
         <div className="mb-12 flex flex-col items-end justify-between gap-6 border-l-4 border-primary pl-6 md:flex-row">
           <div className="flex flex-col gap-4">
             <div className="flex flex-wrap items-center gap-4">
-              <span className="rounded border border-primary/15 bg-primary/5 px-3 py-1 font-label-caps text-[10px] tracking-widest text-primary">
-                {project.archiveCode}
-              </span>
+              {project.category ? (
+                <span className="rounded border border-primary/15 bg-primary/5 px-3 py-1 font-label-caps text-[10px] tracking-widest text-primary">
+                  {project.category}
+                </span>
+              ) : null}
+              {project.year ? (
+                <span className="font-code-sm text-[10px] uppercase tracking-[0.24em] text-on-surface-variant/55">
+                  {project.year}
+                </span>
+              ) : null}
             </div>
             <p className="font-label-caps text-[10px] uppercase tracking-[0.32em] text-primary/70">
               {project.label}
@@ -30,11 +37,11 @@ export function ProjectDetailPage({ project }: ProjectDetailPageProps) {
           </div>
           <Link
             className="group flex items-center gap-2 rounded-lg border border-outline-variant bg-surface-glass px-6 py-3 shadow-lg transition-all active:scale-95 hover:border-primary-fixed-dim"
-            href="/"
+            href="/projects"
           >
-            <Icon className="h-5 w-5 text-primary group-hover:animate-pulse" name="home" />
+            <Icon className="h-5 w-5 text-primary group-hover:animate-pulse" name="arrow_back" />
             <span className="font-label-caps text-label-caps text-primary">
-              RETURN TO HOME
+              BACK TO PROJECTS
             </span>
           </Link>
         </div>

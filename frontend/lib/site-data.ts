@@ -22,8 +22,8 @@ export type ProjectItem = {
   desc: string;
   tags: string[];
   img: string;
-  archiveCode: string;
-  status: string;
+  year?: string;
+  category?: string;
   summary: string;
   problem: string;
   solution: string;
@@ -118,8 +118,8 @@ export const projectItems: ProjectItem[] = [
     desc: "Classic gaming reimagined with Rust and WebAssembly.",
     tags: ["Rust", "TypeScript", "WebAssembly", "Webpack", "HTML5"],
     img: "/snake_game_screenshot.png",
-    archiveCode: "QC-ME-001",
-    status: "Rust core",
+    year: "2024",
+    category: "Systems / Games",
     summary: "Classic snake game built with Rust and compiled to WebAssembly for browser play, delivering native-like performance with memory safety guarantees.",
     problem: "Browser games are usually built in JavaScript-first stacks, which makes it harder to explore systems-level performance, lower-level state control, and memory safety in a simple project.",
     solution: "I rebuilt a classic game in Rust and exported it through WebAssembly, using the project to combine low-level logic with a browser delivery path while keeping the gameplay immediate and familiar.",
@@ -136,8 +136,8 @@ export const projectItems: ProjectItem[] = [
     desc: "Visualizing and understanding time complexity.",
     tags: ["React", "Next.js", "JavaScript"],
     img: "/sorting-algorithm.png",
-    archiveCode: "QC-WE-012",
-    status: "Canvas ops",
+    year: "2024",
+    category: "Frontend / Education",
     summary: "Visual tool for helping users understand how various sorting algorithms operate. All operations are highlighted and slowed down for a meaningful understanding.",
     problem: "Recursive and iterative sorts can be hard to read in motion, especially when comparisons and swaps need to be surfaced in a way that actually teaches the algorithm.",
     solution: "I built an educational visualizer with implemented algorithms, controlled speed and batch settings, and colored highlighting to make comparisons and swaps legible as the sort progresses.",
@@ -153,9 +153,9 @@ export const projectItems: ProjectItem[] = [
     tech: "Machine Learning + Scikit Learn + OpenCV",
     desc: "Play against a computer, as if it can really see you.",
     tags: ["Machine Learning", "Scikit Learn", "OpenCV", "MediaPipe", "NumPy"],
-    img: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
-    archiveCode: "QC-CV-007",
-    status: "Vision loop",
+    img: "/rps_screenshot.png",
+    year: "2024",
+    category: "Vision / ML",
     summary: "This game uses MediaPipe landmark detection to gather information about the player's hand's position. These landmarks are fed into a custom model trained using Scikit Learn while the computer generates random actions to compete with.",
     problem: "A gesture game needs more than decent model output. It needs a full realtime loop from hand detection to feature extraction to a response that feels immediate enough to play against.",
     solution: "I used MediaPipe to extract hand landmarks, trained a custom Scikit Learn model for gesture classification, and connected the predictions to a rock-paper-scissors game loop against a computer opponent.",
@@ -170,9 +170,9 @@ export const projectItems: ProjectItem[] = [
     tech: "NextJS + React + Typescript",
     desc: "Tracking and organizing your ongoing job applications.",
     tags: ["NextJS", "React", "Typescript", "PostgreSQL", "OAuth"],
-    img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
-    archiveCode: "QC-DB-021",
-    status: "Cloud pipe",
+    img: "/job_trk.png",
+    year: "2024",
+    category: "Full Stack",
     summary: "Full stack web app built for efficient job application tracking. Add, update, and delete your active applications. Gain insights about the applications you've sent out over the last six months and stay on top of upcoming interviews.",
     problem: "Application tracking gets messy quickly when opportunities, deadlines, interview dates, and status changes are scattered across notes and spreadsheets.",
     solution: "I built a full-stack tracker focused on clean CRUD workflows and useful visibility over recent applications, so the system stays practical as the pipeline grows.",

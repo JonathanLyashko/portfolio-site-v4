@@ -60,10 +60,15 @@ export function HomePage() {
                 />
                 VIEW PROJECTS
               </Link>
-              <button className="flex items-center gap-3 rounded-lg border border-primary/30 px-8 py-4 font-label-caps text-label-caps text-primary transition-all hover:border-primary hover:bg-primary/10">
+              <a
+                className="flex items-center gap-3 rounded-lg border border-primary/30 px-8 py-4 font-label-caps text-label-caps text-primary transition-all hover:border-primary hover:bg-primary/10"
+                href="/Jonathan_Lyashko_CV.pdf"
+                rel="noreferrer"
+                target="_blank"
+              >
                 <Icon className="h-5 w-5" name="description" />
                 RESUME
-              </button>
+              </a>
             </div>
             <div className="flex items-center gap-4 pt-1">
               <span className="font-label-caps text-[10px] uppercase tracking-[0.24em] text-primary/45">
@@ -119,7 +124,7 @@ export function HomePage() {
             </h2>
             <div className="h-[1px] flex-grow bg-primary/20"></div>
             <span className="font-code-sm text-code-sm text-primary/40">
-              [USER_CHRONICLE_V1]
+              [TIME_LINE]
             </span>
           </div>
           <div className="relative ml-4 space-y-12 border-l border-primary/20 pl-8 md:ml-8 md:pl-12">
@@ -177,7 +182,7 @@ export function HomePage() {
             </h2>
             <div className="h-[1px] flex-grow bg-primary/20"></div>
             <span className="font-code-sm text-code-sm text-primary/40">
-              [EXP_CHRONO_V2]
+              [EXPERIENCE]
             </span>
           </div>
           <div className="relative ml-4 space-y-16 border-l border-primary/20 pl-8 md:ml-8 md:pl-12">
@@ -226,7 +231,7 @@ export function HomePage() {
             </h2>
             <div className="h-[1px] flex-grow bg-primary/20"></div>
             <span className="font-code-sm text-code-sm text-primary/40">
-              [COMMS_PROTOCOL_V1]
+              [CONTACT]
             </span>
           </div>
           <div className="mx-auto max-w-4xl">
