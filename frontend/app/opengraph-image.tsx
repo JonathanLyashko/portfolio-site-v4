@@ -11,7 +11,7 @@ export const size = {
 export const contentType = "image/png";
 
 export default async function OpenGraphImage() {
-  const headshotPath = path.join(process.cwd(), "public", "headshot.jpg");
+  const headshotPath = path.join(process.cwd(), "public", "headshot3.jpg");
   const headshotBuffer = await readFile(headshotPath);
   const headshotDataUrl = `data:image/jpeg;base64,${headshotBuffer.toString("base64")}`;
 
