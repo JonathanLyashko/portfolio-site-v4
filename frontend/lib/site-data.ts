@@ -25,8 +25,9 @@ export type ProjectItem = {
   year?: string;
   category?: string;
   summary: string;
-  problem: string;
-  solution: string;
+  whatItDoes: string;
+  howItWorks: string;
+  challenges: string[];
   links: {
     repo?: string;
     live?: string;
@@ -111,6 +112,29 @@ export const experienceItems: ExperienceItem[] = [
 
 export const projectItems: ProjectItem[] = [
   {
+    slug: "signal-lab",
+    label: "Featured Project",
+    title: "Signal Lab",
+    tech: "C++ + TypeScript + DSP",
+    desc: "Interactive signal-processing workspace for modulation and analysis.",
+    tags: ["DSP", "Signal Processing", "Data Visualization"],
+    img: "/signal_lab_screenshot.png",
+    year: "2026",
+    category: "DSP / Simulation",
+    summary: "Signal Lab is an interactive browser-based workspace for exploring analog communication systems, modulation chains, and their behavior across both the time and frequency domains.",
+    whatItDoes: "Signal Lab lets users assemble modulation pipelines, tune parameters, and inspect the resulting signals in a single browser-based workspace. It is aimed at making analog communications concepts more tangible through direct manipulation and immediate visual feedback.",
+    howItWorks: "The interface combines a block-based signal chain, per-stage parameter panels, and synchronized time-domain and frequency-spectrum views. As settings change, the system updates the active modulation path and regenerates the visual outputs so the behavior of the chain stays legible end to end.",
+    challenges: [
+      "Designing a workspace that stays readable while exposing several signal-processing stages at once.",
+      "Keeping parameter controls, block flow, and waveform views synchronized without the interface feeling disjointed.",
+      "Presenting communications concepts clearly enough for exploration rather than just static demonstration.",
+    ],
+    links: {
+      live: "https://signal-lab.jonathanlyashko.com",
+      repo: "https://github.com/JonathanLyashko/modulation-simulator"
+    },
+  },
+  {
     slug: "rust-snake-game",
     label: "Featured Project",
     title: "Rust Snake Game",
@@ -121,8 +145,13 @@ export const projectItems: ProjectItem[] = [
     year: "2024",
     category: "Systems / Games",
     summary: "Classic snake game built with Rust and compiled to WebAssembly for browser play, delivering native-like performance with memory safety guarantees.",
-    problem: "Browser games are usually built in JavaScript-first stacks, which makes it harder to explore systems-level performance, lower-level state control, and memory safety in a simple project.",
-    solution: "I rebuilt a classic game in Rust and exported it through WebAssembly, using the project to combine low-level logic with a browser delivery path while keeping the gameplay immediate and familiar.",
+    whatItDoes: "This project recreates the classic snake game in the browser while moving the gameplay logic into Rust. It serves as both a playable game and a small systems-focused experiment in shipping low-level code to the web.",
+    howItWorks: "Game state, movement, collision checks, and update loops are implemented in Rust and compiled to WebAssembly, then connected to a lightweight browser interface. That split keeps the rendering path simple while pushing the core logic into a memory-safe systems language.",
+    challenges: [
+      "Bridging Rust gameplay logic cleanly into a browser runtime through WebAssembly.",
+      "Maintaining a responsive game loop while keeping the frontend layer minimal.",
+      "Using a simple game as a serious vehicle for systems-oriented implementation choices.",
+    ],
     links: {
       live: "https://snakegame.jonathanlyashko.com",
       repo: "https://github.com/JonathanLyashko/SnakeGame",
@@ -139,8 +168,13 @@ export const projectItems: ProjectItem[] = [
     year: "2024",
     category: "Frontend / Education",
     summary: "Visual tool for helping users understand how various sorting algorithms operate. All operations are highlighted and slowed down for a meaningful understanding.",
-    problem: "Recursive and iterative sorts can be hard to read in motion, especially when comparisons and swaps need to be surfaced in a way that actually teaches the algorithm.",
-    solution: "I built an educational visualizer with implemented algorithms, controlled speed and batch settings, and colored highlighting to make comparisons and swaps legible as the sort progresses.",
+    whatItDoes: "The visualizer shows how different sorting algorithms behave step by step, making comparisons, swaps, and progression visible instead of abstract. It is built to help users understand algorithm behavior through motion rather than only code or notation.",
+    howItWorks: "Each sorting algorithm drives updates to a shared array visualization, with controlled pacing and visual emphasis for the operations currently taking place. The interface exposes the algorithm in a way that makes intermediate state changes readable during execution.",
+    challenges: [
+      "Making algorithm steps visible without overwhelming the user with too much visual noise.",
+      "Balancing educational pacing with enough responsiveness to keep the tool usable.",
+      "Representing different algorithm behaviors through one consistent visualization model.",
+    ],
     links: {
       repo: "https://github.com/JonathanLyashko/AlgorithmVisualizer",
       live: "https://algorithm-visualizer.jonathanlyashko.com",
@@ -157,8 +191,13 @@ export const projectItems: ProjectItem[] = [
     year: "2024",
     category: "Vision / ML",
     summary: "This game uses MediaPipe landmark detection to gather information about the player's hand's position. These landmarks are fed into a custom model trained using Scikit Learn while the computer generates random actions to compete with.",
-    problem: "A gesture game needs more than decent model output. It needs a full realtime loop from hand detection to feature extraction to a response that feels immediate enough to play against.",
-    solution: "I used MediaPipe to extract hand landmarks, trained a custom Scikit Learn model for gesture classification, and connected the predictions to a rock-paper-scissors game loop against a computer opponent.",
+    whatItDoes: "This project turns hand gestures into playable rock-paper-scissors input, letting the user compete against a computer using realtime vision-based classification. It combines camera input, landmark extraction, model inference, and game response in one loop.",
+    howItWorks: "MediaPipe is used to detect and track hand landmarks from the live camera feed, and those features are passed into a trained Scikit Learn classifier to identify the gesture. The predicted move is then fed directly into the game logic so the match updates in realtime.",
+    challenges: [
+      "Building a vision loop that feels immediate enough to support actual play.",
+      "Converting noisy hand-tracking data into stable gesture predictions.",
+      "Connecting ML inference to game logic without the whole interaction feeling laggy or brittle.",
+    ],
     links: {
       repo: "https://github.com/JonathanLyashko",
     },
@@ -174,8 +213,13 @@ export const projectItems: ProjectItem[] = [
     year: "2024",
     category: "Full Stack",
     summary: "Full stack web app built for efficient job application tracking. Add, update, and delete your active applications. Gain insights about the applications you've sent out over the last six months and stay on top of upcoming interviews.",
-    problem: "Application tracking gets messy quickly when opportunities, deadlines, interview dates, and status changes are scattered across notes and spreadsheets.",
-    solution: "I built a full-stack tracker focused on clean CRUD workflows and useful visibility over recent applications, so the system stays practical as the pipeline grows.",
+    whatItDoes: "JobTrk organizes active job applications, status changes, and interview timelines in one place. The goal is to replace scattered spreadsheets and notes with a cleaner workflow for managing an evolving application pipeline.",
+    howItWorks: "The app uses a full-stack web architecture to support creating, updating, and reviewing applications over time, with views that make recent activity and upcoming steps easier to track. The system is structured around practical CRUD behavior rather than overdesigned workflow abstractions.",
+    challenges: [
+      "Designing a workflow that stays useful as the number of tracked applications grows.",
+      "Making application status and timeline data readable without crowding the interface.",
+      "Keeping the stack practical and maintainable while still supporting a polished user flow.",
+    ],
     links: {
       repo: "https://github.com/JonathanLyashko/JobTrk",
       live: "https://jobtrk.jonathanlyashko.com",
@@ -188,6 +232,48 @@ export function getProjectBySlug(slug: string) {
 }
 
 export const courseItems: CourseItem[] = [
+  {
+    term: "TERM_LOG [3B]",
+    id: "ece307",
+    code: "ECE 307",
+    title: "Probability Theory and Statistics 2",
+    desc: "This course provides in depth knowledge of statistics motivated by electrical and computer engineering applications. Use of modern statistical software tools is introduced. Topics include sufficient statistics, exponential families, hypothesis testing, error estimation, confidence intervals, chi-square tests, analysis of variance, regression, correlation, decision theory, and Bayesian and non-Bayesian statistics.",
+  },
+  {
+    term: "TERM_LOG [3B]",
+    id: "ece313",
+    code: "ECE 313",
+    title: "Digital Signal Processing",
+    desc: "Fourier representations in discrete and continuous time. Discrete Fourier transform and fast Fourier transform algorithms. Sampling theory. Sampling and quantization errors. Transform analysis of linear time-invariant systems. Filter design. Discrete Hilbert transform. Introduction to filter banks and discrete wavelet transform.",
+  },
+  {
+    term: "TERM_LOG [3B]",
+    id: "ece320",
+    code: "ECE 320",
+    title: "Computer Architecture",
+    desc: "Organization and performance of uniprocessors, pipelined processors, dynamically scheduled processors, parallel processors and multiprocessors; memory and cache structures; multiprocessor algorithms and synchronization techniques; special-purpose architectures.",
+  },
+  {
+    term: "TERM_LOG [3B]",
+    id: "ece358",
+    code: "ECE 358",
+    title: "Computer Networks",
+    desc: "This course is a comprehensive introduction to computer networks. The focus is on the concepts, the protocols, and the fundamental design principles that have contributed to the success of the internet. Topics include history of the Internet, transmission media and technologies, switching and multiplexing, protocols and layering, wired and wireless LAN (local-area networks), congestion/flow/error control, routing, addressing, internetworking (Internet) including TCP (transmission control protocol).",
+  },
+  {
+    term: "TERM_LOG [3B]",
+    id: "ece405a",
+    code: "ECE 405A",
+    title: "Quantum Information Processing Devices",
+    desc: "This course introduces physical implementations of quantum computers with an emphasis on common and connecting themes. The course topics include the review of quantum mechanics, criteria to build quantum computers, quantum circuit models, and four quantum hardware platforms (nuclear magnetic resonance, optical photons, trapped ions, and superconducting systems) in terms of qubit definition, universal gate sets, initialization, measurement strategies, and decoherence processes.",
+  },
+{
+    term: "TERM_LOG [3B]",
+    id: "ne345",
+    code: "NE 345",
+    title: "Photonic Materials and Devices",
+    desc: "Wave nature of light, refractive index and dispersion, group velocity, irradiance and Poynting vector, Snell's law, Fresnel's Equation, antireflection coatings, absorption of light, temporal and spatial coherence, dielectric waveguides and optical fibers, planar waveguides, dispersion in waveguides; light emitting diodes (LED), pn junction, LED materials, stimulated emission, lasers, photodetectors, photovoltaic devices, solar cells.",
+  },
   {
     term: "TERM_LOG [3A]",
     id: "ece318",
@@ -269,7 +355,7 @@ export const courseItems: CourseItem[] = [
     term: "TERM_LOG [2B]",
     id: "ece252",
     code: "ECE 252",
-    title: "Distributed Systems & Operating Environments",
+    title: "Systems Programming and Concurrency",
     desc: "Processes and threads (pthreads); system calls; concurrency (semaphore, mutex, monitors, and barrier synchronization); user-level memory management. Performance and correctness of concurrent systems. Deadlock detection and recovery; file systems.",
   },
   {

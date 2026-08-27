@@ -107,7 +107,7 @@ export function HomePage() {
                   alt="Jonathan Lyashko"
                   className="h-full w-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0"
                   height={320}
-                  src="/headshot.jpg"
+                  src="/headshot3.jpg"
                   width={320}
                 />
               </div>
