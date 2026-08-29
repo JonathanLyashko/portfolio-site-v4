@@ -234,6 +234,13 @@ export function getProjectBySlug(slug: string) {
 export const courseItems: CourseItem[] = [
   {
     term: "TERM_LOG [3B]",
+    id: "ece206",
+    code: "ECE 206",
+    title: "Advanced Calculus 2 for Electrical Engineers",
+    desc: "Triple integrals, cylindrical and spherical polar coordinates. Divergence and curl, applications. Surface integrals, Green's, Gauss' and Stokes' theorems, applications. Complex functions, analytic functions, contour integrals, Cauchy's integral formula, Laurent series, residues.",
+  },
+  {
+    term: "TERM_LOG [3B]",
     id: "ece307",
     code: "ECE 307",
     title: "Probability Theory and Statistics 2",
